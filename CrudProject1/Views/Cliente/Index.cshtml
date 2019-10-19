@@ -1,0 +1,42 @@
+﻿@model List<CrudProject1.Models.ViewModels.ListClienteViewModels>
+@{
+    ViewBag.Title = "CRUD CLIENTES";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div style="text-align:right;">
+    <a href="~/Cliente/Nuevo" class="btn btn-primary">Nuevo</a>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-dark">
+            <tr>
+                <td>#</td>
+                <td>Nit</td>
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td>Edad</td>
+                <td>Fecha de Nac</td>
+            </tr>
+            @foreach(var oElemento in Model)
+            {
+        <tr>
+            <td>@oElemento.Id</td>
+            <td>@oElemento.Nit</td>
+            <td>@oElemento.Nombre</td>
+            <td>@oElemento.Apellido</td>
+            <td>@oElemento.Edad</td>
+            <td>@oElemento.Fecha</td>
+            <td>
+                <a class="btn btn-warning" href="~/Cliente/Editar/@oElemento.Id">Editar</a>
+                <a class="btn btn-danger" href="~/Cliente/Eliminar/@oElemento.Id">Eliminar</a>
+            </td>
+        </tr>
+            }
+        </table>
+    </div>
+</div>
+
